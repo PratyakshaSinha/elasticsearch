@@ -1,4 +1,4 @@
-FROM ubuntu:trusty-20190515
+FROM ubuntu:cosmic
 ADD . /fixture
 RUN echo kerberos.build.elastic.co > /etc/hostname && echo "127.0.0.1 kerberos.build.elastic.co" >> /etc/hosts
 RUN bash /fixture/src/main/resources/provision/installkdc.sh
