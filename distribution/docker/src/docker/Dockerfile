@@ -11,7 +11,7 @@
 # Set gid=0 and make group perms==owner perms
 ################################################################################
 
-FROM centos:7 AS builder
+FROM centos:latest AS builder
 
 ENV PATH /usr/share/elasticsearch/bin:$PATH
 ENV JAVA_HOME /opt/jdk-${jdkVersion}
@@ -47,7 +47,7 @@ COPY config/elasticsearch.yml config/log4j2.properties config/
 # Add entrypoint
 ################################################################################
 
-FROM centos:7
+FROM centos:latest
 
 ENV ELASTIC_CONTAINER true
 ENV JAVA_HOME /opt/jdk-${jdkVersion}
